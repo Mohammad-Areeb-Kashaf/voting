@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:voting/controllers/candidate_controller.dart';
+import 'package:voting/binding.dart';
 import 'package:voting/firebase_options.dart';
 import 'package:voting/screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(CandidateController());
-    return MaterialApp(
+    return GetMaterialApp(
+      initialBinding: Binding(),
       title: 'Voting',
       theme: ThemeData(
         useMaterial3: true,

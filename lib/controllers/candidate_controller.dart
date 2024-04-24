@@ -13,7 +13,7 @@ class CandidateController extends GetxController {
     getCandidates();
   }
 
-  Widget getCandidates() {
+  Widget getCandidates({Function? onVotePressed}) {
     return StreamBuilder(
       stream: _firestore.collection('candidates').snapshots(),
       builder: (context, snapshot) {
@@ -48,7 +48,7 @@ class CandidateController extends GetxController {
                         style: const TextStyle(fontSize: 14),
                       ),
                       trailing: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () => onVotePressed!(candidateModel),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0)),
                         color: Colors.indigo.shade900,

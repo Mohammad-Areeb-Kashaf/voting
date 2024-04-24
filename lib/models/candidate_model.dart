@@ -1,7 +1,7 @@
 class CandidateModel {
   final String name;
   final String symbolImageUrl;
-  final int votes;
+  int votes;
 
   CandidateModel({
     required this.name,
